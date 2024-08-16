@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_bookings
+    description: "Bookings of the patiants for specific service and professional."
+    columns:
+      - name: booking_id
+        description: ""
+        tests:
+          - not_null
+          - unique
+
+      - name: client_id
+        description: ""
+
+      - name: service_id
+        description: ""
+
+      - name: booking_date
+        description: ""
+        data_type: date
+
+      - name: booking_time
+        description: ""
+        data_type: time
+
+      - name: dentist_id
+        description: ""
+
+      - name: metadata_filename
+        description: ""
+
+      - name: metadata_file_row_number
+        description: ""
+
+      - name: metadata_file_last_modified
+        description: ""
