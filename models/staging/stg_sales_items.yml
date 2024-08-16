@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_sales_items
+    description: ""
+    columns:
+      - name: sales_item_id
+        description: ""
+
+      - name: sales_order_id
+        description: ""
+
+      - name: product_id
+        description: ""
+
+      - name: booking_id
+        description: ""
+
+      - name: quantity
+        description: ""
+
+      - name: unit_price
+        description: ""
+
+      - name: metadata_filename
+        description: ""
+
+      - name: metadata_file_row_number
+        description: ""
+
+      - name: metadata_file_last_modified
+        description: ""

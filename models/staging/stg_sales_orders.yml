@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_sales_orders
+    description: ""
+    columns:
+      - name: sales_order
+        description: ""
+
+      - name: client_id
+        description: ""
+
+      - name: sales_order_date
+        description: ""
+
+      - name: total_amount
+        description: ""
+
+      - name: payment_method
+        description: ""
+
+      - name: status
+        description: ""
+
+      - name: metadata_filename
+        description: ""
+
+      - name: metadata_file_row_number
+        description: ""
+
+      - name: metadata_file_last_modified
+        description: ""
