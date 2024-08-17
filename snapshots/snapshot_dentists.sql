@@ -1,16 +1,16 @@
-{% snapshot snapshot_clients %}
+{% snapshot snapshot_dentists %}
 
 {{
     config(
         target_schema = 'SCD_SNAPSHOTS',
-        unique_key = 'CLIENT_ID',
+        unique_key = 'DENTIST_ID',
         strategy = 'timestamp',
         updated_at = 'METADATA_FILE_LAST_MODIFIED'
     )
 }}
 
 SELECT 
-    CLIENT_ID,
+    DENTIST_ID,
     FIRST_NAME,
     LAST_NAME,
     FULL_NAME, 
@@ -20,5 +20,5 @@ SELECT
     EMAIL_ADDRESS,
     ADDRESS, 
     METADATA_FILE_LAST_MODIFIED
-FROM {{ ref("stg_clients") }}
+FROM {{ ref("stg_dentists") }}
 {% endsnapshot %}
