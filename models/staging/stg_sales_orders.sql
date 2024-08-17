@@ -6,7 +6,7 @@
 
 with source as (
     SELECT 
-        SALES_ORDER,
+        SALES_ORDER AS SALES_ORDER_ID,
         CLIENT_ID,
         CAST(SALES_ORDER_DATE AS DATE) AS SALES_ORDER_DATE,
         CAST(TOTAL_AMOUNT AS NUMBER(18,2)) AS TOTAL_AMOUNT,
@@ -19,7 +19,7 @@ with source as (
 
 )
     SELECT
-        SALES_ORDER,
+        SALES_ORDER_ID,
         CLIENT_ID,
         SALES_ORDER_DATE,
         TOTAL_AMOUNT,

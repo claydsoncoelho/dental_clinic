@@ -5,16 +5,16 @@ models:
     description: "Bookings of the patiants for specific service and professional."
     columns:
       - name: booking_id
-        description: ""
+        description: "Booking unique ID"
         tests:
           - not_null
           - unique
 
       - name: client_id
-        description: ""
+        description: "Client ID of the booking."
 
       - name: service_id
-        description: ""
+        description: "Service booked by the client."
 
       - name: booking_date
         description: ""

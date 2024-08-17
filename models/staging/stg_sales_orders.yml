@@ -4,7 +4,7 @@ models:
   - name: stg_sales_orders
     description: ""
     columns:
-      - name: sales_order
+      - name: sales_order_id
         description: ""
 
       - name: client_id
@@ -21,6 +21,11 @@ models:
 
       - name: status
         description: ""
+        tests:
+          - accepted_values:
+              values:
+                - "Paid"
+                - "Pending"
 
       - name: metadata_filename
         description: ""

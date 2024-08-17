@@ -9,6 +9,11 @@ models:
 
       - name: sales_order_id
         description: ""
+        tests:
+          - not_null
+          - relationships:
+              field: sales_order_id
+              to: ref('stg_sales_orders')
 
       - name: product_id
         description: ""
