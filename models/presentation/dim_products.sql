@@ -1,25 +1,25 @@
 with source as (
-    SELECT 
-        DBT_SCD_ID AS SCD_PRODUCT_ID, 
-        PRODUCT_ID,
-        PRODUCT_NAME,
-        DESCRIPTION,
-        COST,
-        PRICE,
-        DBT_UPDATED_AT AS SCD_UPDATED_AT,
-        DBT_VALID_FROM AS SCD_VALID_FROM, 
-        DBT_VALID_TO AS SCD_VALID_TO
-    FROM {{ ref("snapshot_products") }}
+    select
+        dbt_scd_id as scd_product_id,
+        product_id,
+        product_name,
+        description,
+        cost,
+        price,
+        dbt_updated_at as scd_updated_at,
+        dbt_valid_from as scd_valid_from,
+        dbt_valid_to as scd_valid_to
+    from {{ ref("snapshot_products") }}
 )
 
-    SELECT
-        SCD_PRODUCT_ID, 
-        PRODUCT_ID,
-        PRODUCT_NAME,
-        DESCRIPTION,
-        COST,
-        PRICE,
-        SCD_UPDATED_AT,
-        SCD_VALID_FROM,
-        SCD_VALID_TO
-    FROM source
+select
+    scd_product_id,
+    product_id,
+    product_name,
+    description,
+    cost,
+    price,
+    scd_updated_at,
+    scd_valid_from,
+    scd_valid_to
+from source

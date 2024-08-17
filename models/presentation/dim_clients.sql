@@ -1,33 +1,33 @@
 with source as (
-    SELECT 
-        DBT_SCD_ID AS SCD_CLIENT_ID, 
-        CLIENT_ID,
-        FIRST_NAME,
-        LAST_NAME,
-        FULL_NAME, 
-        DATE_OF_BIRTH,
-        GENDER,
-        PHONE_NUMBER,
-        EMAIL_ADDRESS,
-        ADDRESS, 
-        DBT_UPDATED_AT AS SCD_UPDATED_AT,
-        DBT_VALID_FROM AS SCD_VALID_FROM, 
-        DBT_VALID_TO AS SCD_VALID_TO
-    FROM {{ ref("snapshot_clients") }}
+    select
+        dbt_scd_id as scd_client_id,
+        client_id,
+        first_name,
+        last_name,
+        full_name,
+        date_of_birth,
+        gender,
+        phone_number,
+        email_address,
+        address,
+        dbt_updated_at as scd_updated_at,
+        dbt_valid_from as scd_valid_from,
+        dbt_valid_to as scd_valid_to
+    from {{ ref("snapshot_clients") }}
 )
 
-    SELECT
-        SCD_CLIENT_ID, 
-        CLIENT_ID,
-        FIRST_NAME,
-        LAST_NAME,
-        FULL_NAME, 
-        DATE_OF_BIRTH,
-        GENDER,
-        PHONE_NUMBER,
-        EMAIL_ADDRESS,
-        ADDRESS, 
-        SCD_UPDATED_AT,
-        SCD_VALID_FROM,
-        SCD_VALID_TO
-    FROM source
+select
+    scd_client_id,
+    client_id,
+    first_name,
+    last_name,
+    full_name,
+    date_of_birth,
+    gender,
+    phone_number,
+    email_address,
+    address,
+    scd_updated_at,
+    scd_valid_from,
+    scd_valid_to
+from source

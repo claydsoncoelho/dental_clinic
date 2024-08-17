@@ -5,33 +5,34 @@
 }}
 
 with source as (
-    SELECT 
-        DENTIST_ID,
-        FIRST_NAME,
-        LAST_NAME,
-        FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME, 
-        CAST(DATE_OF_BIRTH AS DATE) AS DATE_OF_BIRTH,
-        GENDER,
-        PHONE_NUMBER,
-        EMAIL_ADDRESS,
-        ADDRESS,
-        METADATA_FILENAME,
-        METADATA_FILE_ROW_NUMBER,
-        METADATA_FILE_LAST_MODIFIED
-    FROM {{ source('AZURE_BLOB_DENTAL', 'DENTISTS') }}
+    select
+        dentist_id,
+        first_name,
+        last_name,
+        gender,
+        phone_number,
+        email_address,
+        address,
+        metadata_filename,
+        metadata_file_row_number,
+        metadata_file_last_modified,
+        first_name || ' ' || last_name as full_name,
+        CAST(date_of_birth as DATE) as date_of_birth
+    from {{ source('AZURE_BLOB_DENTAL', 'DENTISTS') }}
 
 )
-    SELECT
-        DENTIST_ID,
-        FIRST_NAME,
-        LAST_NAME,
-        FULL_NAME, 
-        DATE_OF_BIRTH,
-        GENDER,
-        PHONE_NUMBER,
-        EMAIL_ADDRESS,
-        ADDRESS,
-        METADATA_FILENAME,
-        METADATA_FILE_ROW_NUMBER,
-        METADATA_FILE_LAST_MODIFIED
-    FROM source
+
+select
+    dentist_id,
+    first_name,
+    last_name,
+    full_name,
+    date_of_birth,
+    gender,
+    phone_number,
+    email_address,
+    address,
+    metadata_filename,
+    metadata_file_row_number,
+    metadata_file_last_modified
+from source
