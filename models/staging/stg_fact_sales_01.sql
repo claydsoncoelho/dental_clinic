@@ -9,13 +9,13 @@ WITH source AS (
         so.payment_method,
         so.status,
         si.quantity,
-        si.unit_price, 
-        si.quantity * si.unit_price as total_price,
-        so.sales_order_date
+        si.unit_price,
+        so.sales_order_date,
+        si.quantity * si.unit_price AS total_price
     FROM {{ ref('stg_sales_items') }} AS si
     INNER JOIN {{ ref('stg_sales_orders') }} AS so
         ON si.sales_order_id = so.sales_order_id
-    LEFT JOIN {{ ref('stg_bookings') }} bo 
+    LEFT JOIN {{ ref('stg_bookings') }} AS bo
         ON si.booking_id = bo.booking_id
 )
 
@@ -29,7 +29,7 @@ SELECT
     payment_method,
     status,
     quantity,
-    unit_price, 
+    unit_price,
     total_price,
     sales_order_date
 FROM source

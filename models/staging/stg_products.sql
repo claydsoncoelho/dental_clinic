@@ -5,25 +5,26 @@
 }}
 
 with source as (
-    SELECT 
-        PRODUCT_ID,
-        PRODUCT_NAME,
-        DESCRIPTION,
-        CAST(COST AS NUMBER(18,2)) AS COST,
-        CAST(PRICE AS NUMBER(18,2)) AS PRICE,
-        METADATA_FILENAME,
-        METADATA_FILE_ROW_NUMBER,
-        METADATA_FILE_LAST_MODIFIED
-    FROM {{ source('AZURE_BLOB_DENTAL', 'PRODUCTS') }}
+    select
+        product_id,
+        product_name,
+        description,
+        metadata_filename,
+        metadata_file_row_number,
+        metadata_file_last_modified,
+        CAST(cost as NUMBER(18, 2)) as cost,
+        CAST(price as NUMBER(18, 2)) as price
+    from {{ source('AZURE_BLOB_DENTAL', 'PRODUCTS') }}
 
 )
-    SELECT
-        PRODUCT_ID,
-        PRODUCT_NAME,
-        DESCRIPTION,
-        COST,
-        PRICE,
-        METADATA_FILENAME,
-        METADATA_FILE_ROW_NUMBER,
-        METADATA_FILE_LAST_MODIFIED
-    FROM source
+
+select
+    product_id,
+    product_name,
+    description,
+    cost,
+    price,
+    metadata_filename,
+    metadata_file_row_number,
+    metadata_file_last_modified
+from source
