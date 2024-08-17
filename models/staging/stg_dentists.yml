@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_dentists
+    description: ""
+    columns:
+      - name: dentist_id
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+      - name: date_of_birth
+        description: ""
+
+      - name: gender
+        description: ""
+
+      - name: phone_number
+        description: ""
+
+      - name: email_address
+        description: ""
+
+      - name: address
+        description: ""
+
+      - name: metadata_filename
+        description: ""
+
+      - name: metadata_file_row_number
+        description: ""
+
+      - name: metadata_file_last_modified
+        description: ""

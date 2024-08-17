@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: AZURE_BLOB_DENTAL
+    database: RAW
+    tables:
+      - name: BOOKINGS
+      - name: CLIENTS
+      - name: DENTISTS
+      - name: PRODUCTS
+      - name: SALES_ITEMS
+      - name: SALES_ORDERS
+      - name: SERVICES
