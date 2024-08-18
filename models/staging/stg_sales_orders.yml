@@ -21,7 +21,7 @@ models:
 
       - name: status
         description: ""
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - "Paid"
