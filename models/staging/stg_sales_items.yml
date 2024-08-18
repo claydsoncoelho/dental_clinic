@@ -9,7 +9,7 @@ models:
 
       - name: sales_order_id
         description: ""
-        tests:
+        data_tests:
           - not_null
           - relationships:
               field: sales_order_id
