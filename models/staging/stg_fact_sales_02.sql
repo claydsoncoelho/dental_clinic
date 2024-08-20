@@ -2,16 +2,23 @@ WITH source AS (
     SELECT
         fact.sales_item_id,
         fact.sales_order_id,
-        dp.scd_product_id, 
+        dp.scd_product_id,
+        fact.product_id,
         ds.scd_service_id, 
+        fact.service_id,
         dd.scd_dentist_id, 
+        fact.dentist_id,
         dc.scd_client_id, 
+        fact.client_id,
         fact.payment_method,
         fact.status,
         fact.quantity,
         fact.unit_price,
-        fact.total_price,
-        fact.sales_order_date
+        total_price,
+        product_cost, 
+        service_cost, 
+        total_cost, 
+        sales_order_date
     FROM {{ ref('stg_fact_sales_01') }} AS fact
     LEFT JOIN {{ ref('dim_products') }} AS dp
         ON fact.product_id = dp.product_id
@@ -27,13 +34,20 @@ SELECT
     sales_item_id,
     sales_order_id,
     scd_product_id,
+    product_id,
     scd_service_id, 
+    service_id, 
     scd_dentist_id,
+    dentist_id,
     scd_client_id,
+    client_id,
     payment_method,
     status,
     quantity,
     unit_price,
     total_price,
+    product_cost, 
+    service_cost, 
+    total_cost, 
     sales_order_date
 FROM source
