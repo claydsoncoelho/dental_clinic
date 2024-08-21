@@ -10,8 +10,8 @@ with client_data as (
         min(sales_order_date) as first_booking,
         max(sales_order_date) as last_booking,
         case
-            when first_booking = last_booking then 'No'
-            else 'Yes'
+            when first_booking = last_booking then 'N'
+            else 'Y'
         end as recurrent_client
     from {{ ref("stg_sales_orders") }}
     group by client_id
