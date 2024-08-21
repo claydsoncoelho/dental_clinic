@@ -10,15 +10,18 @@
 }}
 
 SELECT 
-    CLIENT_ID,
-    FIRST_NAME,
-    LAST_NAME,
-    FULL_NAME, 
-    DATE_OF_BIRTH,
-    GENDER,
-    PHONE_NUMBER,
-    EMAIL_ADDRESS,
-    ADDRESS, 
+    client_id,
+    first_name,
+    last_name,
+    full_name,
+    date_of_birth,
+    gender,
+    phone_number,
+    email_address,
+    address,
+    first_booking,
+    last_booking,
+    recurrent_client, 
     METADATA_FILE_LAST_MODIFIED
-FROM {{ ref("stg_clients") }}
+FROM {{ ref("stg_clients_02") }}
 {% endsnapshot %}
