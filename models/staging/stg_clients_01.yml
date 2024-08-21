@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_clients
+  - name: stg_clients_01
     description: ""
     columns:
       - name: client_id
