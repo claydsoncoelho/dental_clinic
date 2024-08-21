@@ -5,7 +5,7 @@ sources:
     database: RAW
     tables:
       - name: BOOKINGS
-      - name: CLIENTS
+      - name: PATIENTS
       - name: DENTISTS
       - name: PRODUCTS
       - name: SALES_ITEMS

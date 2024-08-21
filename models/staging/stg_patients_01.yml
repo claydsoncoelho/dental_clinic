@@ -1,10 +1,10 @@
 version: 2
 
 models:
-  - name: stg_clients_01
+  - name: stg_patient_01
     description: ""
     columns:
-      - name: client_id
+      - name: patient_id
         description: ""
 
       - name: first_name
@@ -26,6 +26,9 @@ models:
         description: ""
 
       - name: address
+        description: ""
+
+      - name: how_did_you_find_us
         description: ""
 
       - name: metadata_filename

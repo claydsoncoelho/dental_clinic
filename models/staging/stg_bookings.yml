@@ -10,11 +10,17 @@ models:
           - not_null
           - unique
 
-      - name: client_id
+      - name: patient_id
         description: "Client ID of the booking."
 
       - name: service_id
         description: "Service booked by the client."
+
+      - name: dentist_id
+        description: ""
+
+      - name: booking_status
+        description: ""
 
       - name: booking_date
         description: ""
@@ -23,9 +29,6 @@ models:
       - name: booking_time
         description: ""
         data_type: time
-
-      - name: dentist_id
-        description: ""
 
       - name: metadata_filename
         description: ""
