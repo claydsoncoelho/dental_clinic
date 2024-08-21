@@ -10,6 +10,9 @@ with source as (
         phone_number,
         email_address,
         address,
+        first_booking,
+        last_booking,
+        recurrent_client, 
         dbt_updated_at as scd_updated_at,
         dbt_valid_from as scd_valid_from,
         dbt_valid_to as scd_valid_to
@@ -27,6 +30,9 @@ select
     phone_number,
     email_address,
     address,
+    first_booking,
+    last_booking,
+    recurrent_client, 
     scd_updated_at,
     scd_valid_from,
     scd_valid_to
