@@ -7,7 +7,7 @@
 with source as (
     select
         sales_order as sales_order_id,
-        client_id,
+        patient_id,
         payment_method,
         status,
         metadata_filename,
@@ -20,7 +20,7 @@ with source as (
 
 select
     sales_order_id,
-    client_id,
+    patient_id,
     sales_order_date,
     total_amount,
     payment_method,

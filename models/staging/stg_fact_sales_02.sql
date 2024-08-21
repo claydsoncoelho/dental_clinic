@@ -8,8 +8,8 @@ WITH source AS (
         fact.service_id,
         dd.scd_dentist_id, 
         fact.dentist_id,
-        dc.scd_client_id, 
-        fact.client_id,
+        dc.scd_patient_id, 
+        fact.patient_id,
         fact.payment_method,
         fact.status,
         fact.quantity,
@@ -26,8 +26,8 @@ WITH source AS (
         ON fact.service_id = ds.service_id
     LEFT JOIN {{ ref('dim_dentists') }} AS dd
         ON fact.dentist_id = dd.dentist_id
-    LEFT JOIN {{ ref('dim_clients') }} AS dc
-        ON fact.client_id = dc.client_id
+    LEFT JOIN {{ ref('dim_patients') }} AS dc
+        ON fact.patient_id = dc.patient_id
 )
 
 SELECT
@@ -39,8 +39,8 @@ SELECT
     service_id, 
     scd_dentist_id,
     dentist_id,
-    scd_client_id,
-    client_id,
+    scd_patient_id,
+    patient_id,
     payment_method,
     status,
     quantity,

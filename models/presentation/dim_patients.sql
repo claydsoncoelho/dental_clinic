@@ -1,7 +1,7 @@
 with source as (
     select
-        dbt_scd_id as scd_client_id,
-        client_id,
+        dbt_scd_id as scd_patient_id,
+        patient_id,
         first_name,
         last_name,
         full_name,
@@ -10,18 +10,19 @@ with source as (
         phone_number,
         email_address,
         address,
+        how_did_you_find_us,
         first_booking,
         last_booking,
-        recurrent_client, 
+        recurrent_patient, 
         dbt_updated_at as scd_updated_at,
         dbt_valid_from as scd_valid_from,
         dbt_valid_to as scd_valid_to
-    from {{ ref("snapshot_clients") }}
+    from {{ ref("snapshot_patients") }}
 )
 
 select
-    scd_client_id,
-    client_id,
+    scd_patient_id,
+    patient_id,
     first_name,
     last_name,
     full_name,
@@ -30,9 +31,10 @@ select
     phone_number,
     email_address,
     address,
+    how_did_you_find_us,
     first_booking,
     last_booking,
-    recurrent_client, 
+    recurrent_patient, 
     scd_updated_at,
     scd_valid_from,
     scd_valid_to
