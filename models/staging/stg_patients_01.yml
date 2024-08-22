@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_patient_01
+  - name: stg_patients_01
     description: ""
     columns:
       - name: patient_id
