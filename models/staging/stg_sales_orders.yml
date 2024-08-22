@@ -7,7 +7,7 @@ models:
       - name: sales_order_id
         description: ""
 
-      - name: client_id
+      - name: patient_id
         description: ""
 
       - name: sales_order_date
