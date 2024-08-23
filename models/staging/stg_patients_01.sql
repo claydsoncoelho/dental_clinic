@@ -15,7 +15,7 @@ with source as (
         phone_number,
         email_address,
         address,
-        how_did_you_find_us,
+        how_did_you_hear_about_us,
         metadata_filename,
         metadata_file_row_number,
         metadata_file_last_modified
@@ -33,7 +33,7 @@ select
     phone_number,
     email_address,
     address,
-    how_did_you_find_us,
+    how_did_you_hear_about_us,
     metadata_filename,
     metadata_file_row_number,
     metadata_file_last_modified
