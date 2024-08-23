@@ -19,7 +19,7 @@ SELECT
     phone_number,
     email_address,
     address,
-    how_did_you_find_us,
+    how_did_you_hear_about_us,
     first_booking,
     last_booking,
     recurrent_patient, 

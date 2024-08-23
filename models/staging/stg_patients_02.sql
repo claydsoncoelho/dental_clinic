@@ -1,9 +1,3 @@
-{{ 
-    config(
-        materialized='table'
-    ) 
-}}
-
 with patient_data as (
     select
         patient_id,
@@ -29,7 +23,7 @@ source as (
         patient.phone_number,
         patient.email_address,
         patient.address,
-        patient.how_did_you_find_us, 
+        patient.how_did_you_hear_about_us, 
         pd.first_booking,
         pd.last_booking,
         pd.recurrent_patient, 
@@ -51,7 +45,7 @@ select
     phone_number,
     email_address,
     address,
-    how_did_you_find_us,
+    how_did_you_hear_about_us,
     first_booking,
     last_booking,
     recurrent_patient, 
