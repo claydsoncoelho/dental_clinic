@@ -14,10 +14,13 @@ WITH source AS (
     FROM {{ ref('stg_bookings') }} fact
     LEFT JOIN {{ ref('dim_services') }} AS ds
         ON fact.service_id = ds.service_id
+        AND ds.scd_valid_to is null
     LEFT JOIN {{ ref('dim_dentists') }} AS dd
         ON fact.dentist_id = dd.dentist_id
+        AND dd.scd_valid_to is null
     LEFT JOIN {{ ref('dim_patients') }} AS dpat
         ON fact.patient_id = dpat.patient_id
+        AND dpat.scd_valid_to is null
 )
 
 SELECT

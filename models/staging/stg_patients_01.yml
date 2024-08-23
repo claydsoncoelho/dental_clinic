@@ -28,7 +28,7 @@ models:
       - name: address
         description: ""
 
-      - name: how_did_you_find_us
+      - name: how_did_you_hear_about_us
         description: ""
 
       - name: metadata_filename

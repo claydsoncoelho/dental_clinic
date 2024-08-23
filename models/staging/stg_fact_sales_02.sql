@@ -22,12 +22,16 @@ WITH source AS (
     FROM {{ ref('stg_fact_sales_01') }} AS fact
     LEFT JOIN {{ ref('dim_products') }} AS dp
         ON fact.product_id = dp.product_id
+        AND dp.scd_valid_to is null
     LEFT JOIN {{ ref('dim_services') }} AS ds
         ON fact.service_id = ds.service_id
+        AND ds.scd_valid_to is null
     LEFT JOIN {{ ref('dim_dentists') }} AS dd
         ON fact.dentist_id = dd.dentist_id
+        AND dd.scd_valid_to is null
     LEFT JOIN {{ ref('dim_patients') }} AS dc
         ON fact.patient_id = dc.patient_id
+        AND dc.scd_valid_to is null
 )
 
 SELECT
