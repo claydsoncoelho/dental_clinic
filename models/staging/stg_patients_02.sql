@@ -1,13 +1,15 @@
 with patient_data as (
     select
-        patient_id,
-        min(sales_order_date) as first_booking,
-        max(sales_order_date) as last_booking,
+        orders.patient_id,
+        min(orders.sales_order_date) as first_booking,
+        max(orders.sales_order_date) as last_booking,
         case
             when first_booking = last_booking then 'N'
             else 'Y'
         end as recurrent_patient
-    from {{ ref("stg_sales_orders") }}
+    from {{ ref("stg_sales_orders") }} orders
+    inner join {{ ref("stg_sales_items") }} items
+        on orders.sales_order_id = items.sales_order_id
     group by patient_id
 
 ),
