@@ -1,0 +1,5 @@
+vn74038.australia-east.azure.snowflakecomputing.com
+COMPUTE_WH
+REPORT_PROD
+PROD
+PRESENTATION

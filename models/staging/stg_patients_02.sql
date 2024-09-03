@@ -10,7 +10,9 @@ with patient_data as (
     from {{ ref("stg_sales_orders") }} orders
     inner join {{ ref("stg_sales_items") }} items
         on orders.sales_order_id = items.sales_order_id
-    group by patient_id
+    inner join {{ ref("stg_bookings") }} bookings
+        on orders.patient_id = bookings.patient_id
+    group by orders.patient_id
 
 ),
 
